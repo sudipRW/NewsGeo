@@ -31,7 +31,7 @@ const Search = () => {
         <input
           type="text"
           placeholder="Search"
-          className="p-2 text-sm w-[100%] outline-none rounded-3xl bg-[#0A192F] text-white"
+          className="p-2 text-sm w-[100%] outline-none rounded-3xl bg-black text-white"
         />
       </div>
     </div>

@@ -16,8 +16,8 @@ const Clock = () => {
     }
   
     return (
-      <div className='bg-[#0A192F] px-4 py-2 rounded-xl bg-opacity-80'>
-        <p className='text-[#FFD700]'>{time.toLocaleTimeString()}</p>
+      <div className='bg-black px-4 py-2 rounded-md'>
+        <p className='text-white font-semibold text-sm'>{time.toLocaleTimeString()}</p>
       </div>
     );
 }

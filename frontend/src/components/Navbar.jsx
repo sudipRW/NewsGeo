@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Search from "./Search";
 import logo from "../assets/News-Geo-Logo.svg";
-import close from "../assets/Close-Icon.svg";
+import close from "../assets/close.png";
 import menu from "../assets/menu-icon.svg";
 
 const borderColors = {
@@ -22,9 +22,8 @@ const Navbar = ({ categories, category, setCategory, bgColors }) => {
   const handleHamburgerToggle = () => {
     setHamburgerToggled(!hamburgerToggled);
   };
-  console.log(hamburgerToggled);
   return (
-    <div className="p-2 py-4 px-4 fixed z-10 w-[100%] h-[64px] flex items-center justify-between sm:justify-center sm:gap-20 bg-opacity-80 backdrop-filter backdrop-blur-md bg-[#0A192F] gap-4">
+    <div className="p-2 py-4 px-4 fixed z-10 w-[100%] h-[64px] flex items-center justify-between sm:justify-center sm:gap-64 backdrop-filter backdrop-blur-md bg-black gap-4">
       <div className="sm:hidden flex items-center justify-between py-2">
         <input type="checkbox" id="menu-toggle" className="hidden" />
         <label
@@ -37,7 +36,7 @@ const Navbar = ({ categories, category, setCategory, bgColors }) => {
       </div>
 
       <div
-        className={`sidebar absolute z-20 top-0 h-screen w-[250px] transition-all flex flex-col gap-6 bg-opacity-80 backdrop-filter backdrop-blur-md bg-[#0A192F]
+        className={`sidebar absolute z-20 top-0 h-screen w-[250px] transition-all flex flex-col gap-6 backdrop-filter backdrop-blur-md bg-white sm:hidden
             p-4 ${hamburgerToggled ? "left-0" : "left-[-100%]"}
           `}
       >
@@ -67,7 +66,7 @@ const Navbar = ({ categories, category, setCategory, bgColors }) => {
       <div className="logo w-[60px] h-[60px] sm:w-[85px] sm:h-[85px] flex justify-center items-center">
         <img src={logo} alt="logo" className="w-[100%]" />
       </div>
-      <div className="categories hidden space-x-4 w-[80%] sm:flex overflow-x-auto sm:overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-transparent ">
+      <div className="categories hidden space-x-4 w-[80%] sm:flex overflow-x-auto sm:overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-transparent">
         {categories.map((cat, i) => (
           <button
             key={i}
@@ -77,14 +76,14 @@ const Navbar = ({ categories, category, setCategory, bgColors }) => {
             } ${
               category === cat
                 ? `${bgColors[cat]} border-none text-white`
-                : `bg-white text-[#0A192F] border-4 ${borderColors[cat]}`
+                : `bg-white text-black font-semibold border-4 ${borderColors[cat]}`
             }`}
           >
             {cat.toUpperCase()}
           </button>
         ))}
       </div>
-      <Search />
+      {/* <Search /> */}
     </div>
   );
 };

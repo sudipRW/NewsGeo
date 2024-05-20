@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import close from "../assets/Close-Icon.svg";
 import axios, { all } from "axios";
+import TwitterEmbed  from './TwitterEmbed'
 
 const News = ({
   isNewsComponentOpened,
@@ -32,14 +33,8 @@ const News = ({
               hotspots[selectedMarker]?.metaData?.locationName
             ) {
               return (
-                <div className="h-[800px] w-[100%]" key={index}>
-                  <iframe
-                    key={index}
-                    src={`https://twitframe.com/show?url=${hotspot?.metaData?.newsUrl}`}
-                    title="Embedded Page"
-                    className="h-full w-full"
-                   
-                  />
+                <div className="" key={index}>
+                  <TwitterEmbed tweetUrl={hotspot?.metaData?.newsUrl}/>
                 </div>
               );
             } else {
